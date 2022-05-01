@@ -12,8 +12,8 @@ contract HelloWorld {
     uint256 number;
 
     /**
-     * @dev Store value in variable
-     * @param num value to store
+     * @dev Store value in state variable
+     * @param num value to store in 'number'
      */
     function storeNumber(uint256 num) public {
         number = num;
