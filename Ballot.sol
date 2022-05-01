@@ -51,7 +51,7 @@ contract Ballot {
     
     modifier voteEnded() { // Modifier
         require(
-            block.timestamp < (startTime + 40 seconds),//5 minutes),
+            block.timestamp < (startTime + 5 minutes),
             "Voting period is over"
         );
         _;
