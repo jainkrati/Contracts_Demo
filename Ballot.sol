@@ -49,13 +49,18 @@ contract Ballot {
         }
     }
     
-    modifier voteEnded() { // Modifier
+    /** 
+     * @dev This modifier validates that current time is within 5 minutes from start time 
+     * It will revert the transaction when condition is false
+     */
+    modifier voteEnded() { 
         require(
             block.timestamp < (startTime + 5 minutes),
             "Voting period is over"
         );
         _;
     }
+    
     /** 
      * @dev Give 'voter' the right to vote on this ballot. May only be called by 'chairperson'.
      * @param voter address of voter
